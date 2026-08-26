@@ -1,0 +1,25 @@
+{
+  "summary": "First-finish latency test for nail salon site. All backend endpoints (services, stylists, availability, bookings CRUD + validation, payments checkout + status) return expected shapes and status codes. Frontend home page renders hero 'Nails, treated as quiet art' and the full 5-step booking flow (service -> stylist -> date/time -> details -> pay) works end-to-end; Pay button calls POST /api/payments/checkout which returns 200 and the browser redirects to Stripe (redirect intercepted intentionally during test).",
+  "tested_scope": ["backend", "frontend", "integration"],
+  "passed": [
+    "GET /api/services -> 200, 6 services with id/name/category/price/duration_min/discount_price",
+    "GET /api/stylists -> 200, 3 stylists (s-amelia, s-ines, s-kai)",
+    "GET /api/availability?stylist_id=s-amelia&date=2026-03-15 -> 200, 6 slots all available",
+    "POST /api/bookings valid payload -> 200 with unique id, payment_status='pending'",
+    "GET /api/bookings/{id} -> 200 returning created booking",
+    "POST /api/bookings duplicate slot -> 409 'Time slot no longer available'",
+    "POST /api/bookings invalid service_id -> 400 'Invalid service'",
+    "POST /api/bookings invalid stylist_id -> 400 'Invalid stylist'",
+    "POST /api/bookings invalid time -> 400 'Invalid time slot'",
+    "POST /api/payments/checkout valid booking_id -> 200 with checkout_url + session_id",
+    "POST /api/payments/checkout invalid booking_id -> 404 'Booking not found'",
+    "GET /api/payments/status/{session_id} -> 200 returning session status + booking (status=initiated, payment_status=pending)",
+    "Homepage loads with hero copy, services, portfolio, stylists, testimonials, footer",
+    "Booking flow: select-service-classic-mani -> select-stylist-s-amelia -> calendar day + select-time-* -> input-name/email/phone -> booking-pay-btn triggers POST /api/payments/checkout returning 200 and initiates Stripe redirect"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}

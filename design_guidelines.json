@@ -1,0 +1,122 @@
+{
+  "project_overview": {
+    "concept": "A digital sanctuary for high-end nail artistry. Merging editorial fashion aesthetics with modern brutalist minimalism.",
+    "theme": "Dark Luxury Minimalist",
+    "vibe": "Exclusive, calm, architectural, sensory",
+    "app_type": "hybrid_fullstack",
+    "scope": "Customer-facing marketing, appointment booking, and Stripe checkout. No admin dashboard.",
+    "content": "Use sample luxury salon data (name, address, phone, elegant service descriptions, standard prices)."
+  },
+  "typography": {
+    "strategy": "The 'Old Money Tech' variant - blending classic editorial elegance with sterile, modern geometry.",
+    "headings": {
+      "font": "Cormorant Garamond",
+      "import": "@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap');",
+      "class": "font-serif",
+      "rules": "Must use tracking-tight or tracking-tighter for sizes > 32px. Use font-light for elegance. Fluid typography for Hero (clamp up to text-6xl). Never center headings unless for poetic impact."
+    },
+    "body": {
+      "font": "Manrope",
+      "import": "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&display=swap');",
+      "class": "font-sans",
+      "rules": "Clean, highly legible geometry. leading-relaxed for paragraphs. Left aligned."
+    },
+    "accent": {
+      "usage": "Overlines, labels, small UI elements, step indicators.",
+      "rules": "Uppercase, tiny text-xs, ultra-wide tracking-[0.2em]"
+    }
+  },
+  "colors": {
+    "strategy": "Archetype 5: LUXURY. High contrast, rich, emotional, dark mode by default.",
+    "palette": {
+      "background": "#0F0E0E",
+      "surface": "#161515",
+      "surface_elevated": "#1E1D1D",
+      "text_primary": "#F3F0EC",
+      "text_secondary": "#A6A19C",
+      "accent": "#C19277",
+      "accent_hover": "#A67A60",
+      "border": "#2A2828"
+    },
+    "rules": "Never use pure black (#000000). Always use tinted darks. Primary CTA buttons should be the Accent color with dark text. Avoid generic full-screen gradients."
+  },
+  "layouts_and_grids": {
+    "spacing": "Generous Spacing Philosophy. Use py-24 to py-32 for section padding. Break the typical tight UI container mold.",
+    "portfolio_grid": "MODE A: The 'Tetris' Grid. Base grid-cols-1 md:grid-cols-12 gap-8. Mix tall (col-span-4 row-span-2), square (col-span-4 row-span-1), and hero items. Never fill 100% perfectly; leave empty cells for tension.",
+    "services_grid": "Cardless list approach. Rows separated by subtle 1px bottom borders (border-[#2A2828]). Do not use standard white Box-Shadowed Cards.",
+    "alignment": "Prioritize asymmetry. Build visual tension by floating text blocks off-center."
+  },
+  "component_guidelines": {
+    "buttons": "Sharp rectangular (rounded-none) or subtle pill (rounded-full). Use group-hover utility classes for internal icon/text shifting animations. Accent color bg with #0F0E0E text for Primary CTAs.",
+    "booking_flow": "Immersive, multi-step flow (Service -> Stylist -> Date -> Time -> Payment). Avoid long scrolling forms. Use Shadcn Tabs or horizontal animated step containers.",
+    "calendar": "Shadcn Calendar for date selection. Override default styles to match Dark Luxury theme (dark bg, accent color for selected date, remove generic blue focus rings).",
+    "forms": "Inputs must have bg-transparent, border-b border-border, rounded-none, with focus:border-accent. No fully bordered input boxes. Pure HTML/Tailwind for layout, Shadcn logic.",
+    "navigation": "Crystal Glassmorphism over Hero image. backdrop-blur-xl bg-[#0F0E0E]/60 border-b border-white/5. Must contain Logo, Links, and 'Book Now' CTA. Never use completely transparent background.",
+    "footer": "Massive py-32 spacing. Darkest background. Giant text for the 'Book an Appointment' final CTA."
+  },
+  "visual_enhancers": {
+    "surfaces": "Use 'Glassmorphism' strictly for Sticky Headers/Nav. Use 'Grid Borders' (Technical Look) for the pricing/services list to give it an architectural structure.",
+    "textures": "Add a subtle SVG noise/grain overlay (opacity-10, pointer-events-none, fixed to viewport) to kill digital flatness and feel more physical/editorial.",
+    "images": "Hero overlay MUST NOT exceed bg-black/40. The image must be visible. If text contrast is low, use text-shadow or a soft radial gradient directly behind text."
+  },
+  "motion_and_interactions": {
+    "scrolling": "Implement 'lenis' library for smooth momentum scrolling. This is mandatory for a premium feel.",
+    "animations": "Use Framer Motion. Staggered fade-up for services list. Subtle image scale (1.0 to 1.05) on scroll (parallax).",
+    "hover_states": "Images in portfolio should have a slow brightness/contrast shift or scale transform on hover. Buttons should have a background color fill transition.",
+    "page_transitions": "Fade in on load using Framer Motion."
+  },
+  "accessibility": {
+    "contrast": "Ensure #A6A19C against #0F0E0E meets minimum 4.5:1 ratio. Text inside #C19277 buttons must be dark (#0F0E0E) for contrast.",
+    "focus": "All interactable elements must have focus-visible:ring-1 focus-visible:ring-accent outline-none.",
+    "testing": "CRITICAL: All interactive and key informational elements MUST include a data-testid attribute (e.g., data-testid='book-now-button', data-testid='service-select-item')."
+  },
+  "media_and_images": {
+    "guidelines": "Images must look like high-end editorial photography, not cheap stock. Use desaturated or warm-toned images to fit the dark luxury theme.",
+    "image_urls": {
+      "hero_background": {
+        "url": "https://images.unsplash.com/photo-1761470575018-135c213340eb",
+        "description": "Ambient, luxurious steam room lighting to set a calm, premium mood. Use with a 30% black overlay.",
+        "category": "Hero Section"
+      },
+      "portfolio_1": {
+        "url": "https://images.unsplash.com/photo-1604654894610-df63bc536371",
+        "description": "Elegant hand with black/tortoiseshell patterned nails and gold ring.",
+        "category": "Previous Work / Portfolio"
+      },
+      "portfolio_2": {
+        "url": "https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f",
+        "description": "Woman's nails with sleek manicure.",
+        "category": "Previous Work / Portfolio"
+      },
+      "abstract_art": {
+        "url": "https://images.unsplash.com/photo-1620348579043-b634c3813717",
+        "description": "Abstract elegant hands against a wall, used for a large banner or testimonial section background.",
+        "category": "Testimonials / Interstitial Banner"
+      }
+    }
+  },
+  "instructions_to_main_agent": [
+    "Build the application using React (.js files) and Tailwind CSS. Do NOT use .tsx or TypeScript.",
+    "Initialize Shadcn UI for dropdowns, forms, and calendar, but deeply override the CSS to match the dark luxury theme and font families.",
+    "Install and setup @phosphor-icons/react for thin, elegant duotone or light-weight icons. Do not use generic thick icons.",
+    "Install lenis for smooth scrolling and framer-motion for UI transitions.",
+    "Implement the Stripe payment gateway checkout page and the entire appointment booking flow (Service -> Stylist -> Date -> Time -> Payment).",
+    "Ensure 'Cormorant Garamond' is applied via font-serif and 'Manrope' via font-sans. Verify they are loaded via Google Fonts in index.css or index.html.",
+    "Use raw HTML/Tailwind for marketing sections (Hero, Portfolio) to allow extreme asymmetrical layouts, do not rely entirely on rigid Shadcn Cards."
+  ],
+  "universal_guidelines_for_main_agent": [
+    "You tend to converge toward generic, 'on distribution' outputs. Make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition (e.g., transition: all). This breaks transforms.",
+    "You MUST NOT center align the app container (.App { text-align: center; }).",
+    "Always use modern button styles (pill-shaped or sharp) with interaction animations.",
+    "NEVER use AI assistant Emoji characters (🤖🧠💭💡🔮🎯) for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations separate good from extraordinary.",
+    "All interactive and key informational elements MUST include a data-testid attribute for automated testing."
+  ]
+}
