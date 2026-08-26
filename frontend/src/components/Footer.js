@@ -23,20 +23,20 @@ export default function Footer() {
           <div className="md:col-span-5 grid grid-cols-2 gap-8">
             <div>
               <p className="overline mb-4">Visit</p>
-              <p className="font-serif text-lg text-[#F3F0EC] leading-snug">Rua do Chiado 42<br />1200-108 Lisboa<br />Portugal</p>
+              <p className="font-serif text-lg text-[#F3F0EC] leading-snug">Shop 04, Linking Road<br />Bandra West<br />Mumbai 400050</p>
             </div>
             <div>
               <p className="overline mb-4">Contact</p>
               <p className="font-sans text-sm text-[#F3F0EC] leading-loose">
-                +351 21 555 0142<br />
-                <a href="mailto:atelier@lumiere.com" className="hover-underline">atelier@lumiere.com</a>
+                +91 98200 55142<br />
+                <a href="mailto:atelier@lumiere.in" className="hover-underline">atelier@lumiere.in</a>
               </p>
             </div>
             <div>
               <p className="overline mb-4">Hours</p>
               <p className="font-sans text-sm text-[#A6A19C] leading-loose">
-                Tue – Sat<br />10:00 – 19:00<br />
-                <span className="text-[#F3F0EC]/60">Sun · Mon closed</span>
+                Tue – Sun<br />11:00 – 21:00<br />
+                <span className="text-[#F3F0EC]/60">Monday closed</span>
               </p>
             </div>
             <div>

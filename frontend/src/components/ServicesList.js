@@ -15,7 +15,7 @@ export default function ServicesList({ services }) {
           <div className="md:col-span-4">
             <p className="font-sans text-sm text-[#A6A19C] leading-relaxed">
               A curated menu built around technique, longevity, and quiet confidence.
-              Prices in USD. Members save on select treatments.
+              Prices in INR. Members save on select treatments. Taxes included.
             </p>
           </div>
         </div>
@@ -45,12 +45,12 @@ export default function ServicesList({ services }) {
               <div className="col-span-4 md:col-span-2 flex flex-col items-end justify-start">
                 {s.discount_price ? (
                   <>
-                    <span className="font-sans text-xs line-through text-[#A6A19C]/60">${s.price.toFixed(0)}</span>
-                    <span className="font-serif text-3xl font-light text-[#C19277]">${s.discount_price.toFixed(0)}</span>
+                    <span className="font-sans text-xs line-through text-[#A6A19C]/60">₹{s.price.toLocaleString('en-IN')}</span>
+                    <span className="font-serif text-3xl font-light text-[#C19277]">₹{s.discount_price.toLocaleString('en-IN')}</span>
                     <span className="overline mt-1 !text-[10px]">Save {Math.round(100 - (s.discount_price / s.price) * 100)}%</span>
                   </>
                 ) : (
-                  <span className="font-serif text-3xl font-light text-[#F3F0EC]">${s.price.toFixed(0)}</span>
+                  <span className="font-serif text-3xl font-light text-[#F3F0EC]">₹{s.price.toLocaleString('en-IN')}</span>
                 )}
               </div>
             </motion.div>

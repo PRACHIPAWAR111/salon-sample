@@ -34,7 +34,7 @@ SERVICES = [
         "name": "Classic Manicure",
         "category": "Manicure",
         "description": "Timeless nail shaping, cuticle refinement, and a rich single-tone polish finish.",
-        "price": 45.0,
+        "price": 1200.0,
         "duration_min": 45,
         "discount_price": None,
     },
@@ -43,25 +43,25 @@ SERVICES = [
         "name": "Signature Gel Manicure",
         "category": "Manicure",
         "description": "Long-wear gel finish with a hydrating hand ritual and buffed nail architecture.",
-        "price": 68.0,
+        "price": 1800.0,
         "duration_min": 60,
-        "discount_price": 58.0,
+        "discount_price": 1500.0,
     },
     {
         "id": "editorial-art",
         "name": "Editorial Nail Art",
         "category": "Nail Art",
         "description": "Bespoke hand-painted art. Marble, chrome, tortoise, or your own creative reference.",
-        "price": 120.0,
+        "price": 3200.0,
         "duration_min": 90,
-        "discount_price": 99.0,
+        "discount_price": 2700.0,
     },
     {
         "id": "gel-extensions",
         "name": "Gel Extensions",
         "category": "Extensions",
         "description": "Featherweight sculpted extensions in your preferred shape and length.",
-        "price": 145.0,
+        "price": 3900.0,
         "duration_min": 105,
         "discount_price": None,
     },
@@ -70,7 +70,7 @@ SERVICES = [
         "name": "Luxe Pedicure",
         "category": "Pedicure",
         "description": "Warm soak, exfoliation, extended massage, and a mirror-finish polish.",
-        "price": 85.0,
+        "price": 2200.0,
         "duration_min": 75,
         "discount_price": None,
     },
@@ -79,16 +79,16 @@ SERVICES = [
         "name": "Chrome Couture",
         "category": "Nail Art",
         "description": "Reflective liquid chrome pigment sealed under a diamond-grade top coat.",
-        "price": 95.0,
+        "price": 2500.0,
         "duration_min": 75,
-        "discount_price": 79.0,
+        "discount_price": 2100.0,
     },
 ]
 
 STYLISTS = [
-    {"id": "s-amelia", "name": "Amelia Vance", "title": "Creative Director", "bio": "Editorial nail artist featured in Vogue Runway. Fifteen years of couture technique.", "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80"},
-    {"id": "s-ines", "name": "Inés Moreau", "title": "Senior Nail Artist", "bio": "Specialist in hand-painted micro-detail and 3D sculptural work.", "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"},
-    {"id": "s-kai", "name": "Kai Tanaka", "title": "Master Technician", "bio": "Precision structured manicures and Japanese gel technique.", "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=600&q=80"},
+    {"id": "s-aanya", "name": "Aanya Kapoor", "title": "Creative Director", "bio": "Featured in Vogue India and Grazia. Fifteen years of couture nail technique across Mumbai and Milan.", "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80"},
+    {"id": "s-meher", "name": "Meher Sethi", "title": "Senior Nail Artist", "bio": "Specialist in hand-painted micro-detail, bridal sets, and 3D sculptural work.", "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"},
+    {"id": "s-rhea", "name": "Rhea Nair", "title": "Master Technician", "bio": "Precision structured manicures and Japanese gel technique. Trained in Tokyo.", "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=600&q=80"},
 ]
 
 TIME_SLOTS = ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30"]
@@ -229,7 +229,7 @@ async def create_checkout(payload: CheckoutRequest, request: Request):
 
     req = CheckoutSessionRequest(
         amount=float(booking["amount"]),
-        currency="usd",
+        currency="inr",
         success_url=success_url,
         cancel_url=cancel_url,
         metadata={
@@ -244,7 +244,7 @@ async def create_checkout(payload: CheckoutRequest, request: Request):
         "session_id": session.session_id,
         "booking_id": booking["id"],
         "amount": float(booking["amount"]),
-        "currency": "usd",
+        "currency": "inr",
         "status": "initiated",
         "payment_status": "pending",
         "created_at": datetime.now(timezone.utc).isoformat(),

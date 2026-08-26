@@ -46,7 +46,7 @@ export default function Home() {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-5xl"
           >
-            <p className="overline mb-8" data-testid="hero-overline">Est. 2019 — Lisbon · Paris · New York</p>
+            <p className="overline mb-8" data-testid="hero-overline">Est. 2019 — Mumbai · Delhi · Bengaluru</p>
             <h1 className="h-fluid font-serif font-light text-[#F3F0EC] mb-8">
               Nails, treated<br />
               as <em className="text-[#C19277]">quiet</em> art.
@@ -87,7 +87,7 @@ export default function Home() {
               We treat every hand like a canvas — deliberate, unhurried, honest.
             </h2>
             <p className="font-sans text-[#A6A19C] leading-relaxed max-w-2xl">
-              Three artists. Six chairs. One quiet room in the Chiado. Our work
+              Three artists. Six chairs. One quiet room in Bandra West. Our work
               lives at the intersection of couture technique and modern restraint.
               No rush. No noise. Only the nail, the light, and the artist.
             </p>

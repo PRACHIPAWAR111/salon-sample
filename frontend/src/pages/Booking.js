@@ -114,11 +114,11 @@ export default function Booking() {
                         <div className="flex items-baseline gap-3">
                           {s.discount_price ? (
                             <>
-                              <span className="font-serif text-2xl text-[#C19277]">${s.discount_price.toFixed(0)}</span>
-                              <span className="font-sans text-sm line-through text-[#A6A19C]/60">${s.price.toFixed(0)}</span>
+                              <span className="font-serif text-2xl text-[#C19277]">₹{s.discount_price.toLocaleString('en-IN')}</span>
+                              <span className="font-sans text-sm line-through text-[#A6A19C]/60">₹{s.price.toLocaleString('en-IN')}</span>
                             </>
                           ) : (
-                            <span className="font-serif text-2xl text-[#F3F0EC]">${s.price.toFixed(0)}</span>
+                            <span className="font-serif text-2xl text-[#F3F0EC]">₹{s.price.toLocaleString('en-IN')}</span>
                           )}
                         </div>
                       </button>
@@ -271,7 +271,7 @@ export default function Booking() {
                       <Row label="Client" value={details.name} />
                       <div className="pt-6 border-t border-[#2A2828] flex items-end justify-between">
                         <span className="overline">Total due</span>
-                        <span className="font-serif text-4xl font-light text-[#C19277]">${currentPrice.toFixed(2)}</span>
+                        <span className="font-serif text-4xl font-light text-[#C19277]">₹{currentPrice.toLocaleString('en-IN')}</span>
                       </div>
                     </div>
                   </div>
@@ -311,7 +311,7 @@ export default function Booking() {
                 disabled={loading}
                 className="group inline-flex items-center gap-3 bg-[#C19277] text-[#0F0E0E] px-8 py-4 text-xs tracking-wider uppercase hover:bg-[#A67A60] transition-colors duration-500 disabled:opacity-50"
               >
-                {loading ? "Redirecting…" : `Pay $${currentPrice.toFixed(0)}`}
+                {loading ? "Redirecting…" : `Pay ₹${currentPrice.toLocaleString('en-IN')}`}
                 {!loading && <span className="group-hover:translate-x-1 transition-transform duration-500">→</span>}
               </button>
             )}
